@@ -1,0 +1,15 @@
+export const customFonts = {
+  "Montserrat-Italic": require("@assets/fonts/Montserrat-Italic.ttf"),
+  "Montserrat-Regular": require("@assets/fonts/Montserrat-Regular.ttf"),
+  "Montserrat-Black": require("@assets/fonts/Montserrat-Black.ttf"),
+  "Montserrat-Medium": require("@assets/fonts/Montserrat-Medium.ttf"),
+  "Montserrat-Light": require("@assets/fonts/Montserrat-Light.ttf"),
+  "Montserrat-SemiBold": require("@assets/fonts/Montserrat-SemiBold.ttf"),
+  "Montserrat-Bold": require("@assets/fonts/Montserrat-Bold.ttf"),
+  "Montserrat-ExtraBold": require("@assets/fonts/Montserrat-ExtraBold.ttf"),
+  poppinsBold: require("@assets/fonts/Poppins-Bold.ttf"),
+  poppinsMedium: require("@assets/fonts/Poppins-Medium.ttf"),
+  poppinsRegular: require("@assets/fonts/Poppins-Regular.ttf"),
+  poppinsSemiBold: require("@assets/fonts/Poppins-SemiBold.ttf"),
+  poppinsExtraBold: require("@assets/fonts/Poppins-ExtraBold.ttf"),
+};

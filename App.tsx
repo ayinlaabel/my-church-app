@@ -1,20 +1,32 @@
-import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
+import { useState } from "react";
+import { StyleSheet } from "react-native";
+import { useFonts } from "expo-font";
+import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
+import { AuthProvider } from "./src/contexts/AuthContext";
+// import { NotificationProvider } from "@contexts/NotificationContext";
+import { ThemeProvider } from "./src/contexts/ThemeContext";
+import AxiosProvider from "@configs/axios";
+import RootNavigation from "@navigation/root-navigation";
+import { customFonts } from "@constants/fonts/staticFonts";
 
 export default function App() {
+  const [loaded] = useFonts(customFonts);
+  const [queryClient] = useState(() => new QueryClient());
+
+  if (!loaded) {
+    return null;
+  }
+
   return (
-    <View style={styles.container}>
-      <Text>Open up App.tsx to start working on your app!</Text>
-      <StatusBar style="auto" />
-    </View>
+    <QueryClientProvider client={queryClient}>
+      <ThemeProvider>
+        {/* <NotificationProvider> */}
+        <AuthProvider>
+          <AxiosProvider />
+          <RootNavigation />
+        </AuthProvider>
+        {/* </NotificationProvider> */}
+      </ThemeProvider>
+    </QueryClientProvider>
   );
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});

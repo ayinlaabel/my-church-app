@@ -1,0 +1,95 @@
+{
+  "build": {
+    "development": {
+      "developmentClient": true,
+      "distribution": "internal",
+      "environment": "development",
+      "android": {
+        "buildType": "apk",
+        "image": "latest"
+      },
+      "ios": {
+        "simulator": false,
+        "autoIncrement": true,
+        "resourceClass": "medium"
+      },
+      "env": {
+        "APP_ENV": "development",
+        "EXPO_JSI_ENGINE": "hermes",
+        "NODE_ENV": "development"
+      },
+      "channel": "development"
+    },
+    "development-simulator": {
+      "developmentClient": true,
+      "distribution": "internal",
+      "environment": "development",
+      "ios": {
+        "simulator": true,
+        "autoIncrement": true,
+        "resourceClass": "medium"
+      },
+      "env": {
+        "APP_ENV": "development",
+        "EXPO_JSI_ENGINE": "hermes",
+        "NODE_ENV": "development"
+      },
+      "channel": "development"
+    },
+    "uat": {
+      "distribution": "internal",
+      "environment": "preview",
+      "android": {
+        "image": "latest",
+        "buildType": "apk"
+      },
+      "ios": {
+        "simulator": false,
+        "autoIncrement": true,
+        "resourceClass": "medium"
+      },
+      "env": {
+        "APP_ENV": "uat",
+        "NODE_VERSION": "20",
+        "NODE_ENV": "production",
+        "EXPO_JSI_ENGINE": "hermes"
+      },
+      "channel": "uat"
+    },
+    "production": {
+      "environment": "production",
+      "android": {
+        "image": "latest",
+        "gradleCommand": ":app:bundleRelease",
+        "buildType": "app-bundle",
+        "env": {
+          "EXPO_USE_PROGUARD": "1"
+        }
+      },
+      "ios": {
+        "simulator": false,
+        "autoIncrement": true,
+        "resourceClass": "medium"
+      },
+      "env": {
+        "APP_ENV": "production",
+        "EXPO_TARGET_SDK_VERSION": "35",
+        "EXPO_JSI_ENGINE": "hermes",
+        "NODE_ENV": "production"
+      },
+      "channel": "production"
+    }
+  },
+  "submit": {
+    "production": {
+      "ios": {},
+      "android": {
+        "serviceAccountKeyPath": "./assets/firebase/android/google-services-prod.json",
+        "track": "production"
+      }
+    }
+  },
+  "cli": {
+    "appVersionSource": "remote"
+  }
+}
