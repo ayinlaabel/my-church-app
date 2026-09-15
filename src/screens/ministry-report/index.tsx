@@ -274,6 +274,10 @@ const MinistryReportScreen = () => {
                             backgroundColor:
                               Colors[colorScheme].statusPendingBackground,
                           },
+                          r.status === "approved" && {
+                            backgroundColor:
+                              Colors[colorScheme].statusVerifiedBackground,
+                          },
                         ]}
                       >
                         <ThemedText
@@ -281,6 +285,9 @@ const MinistryReportScreen = () => {
                             styles.reportStatus,
                             r.status === "pending" && {
                               color: Colors[colorScheme].statusPending,
+                            },
+                            r.status === "approved" && {
+                              color: Colors[colorScheme].statusVerified,
                             },
                           ]}
                         >
@@ -441,7 +448,7 @@ const styles = StyleSheet.create({
   reportStatusContainer: {
     paddingHorizontal: 15,
     paddingVertical: 3,
-    borderRadius: 999,
+    borderRadius: 99,
   },
   reportStatus: {
     textTransform: "capitalize",
